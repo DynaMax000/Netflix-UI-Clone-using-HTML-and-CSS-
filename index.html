@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stlyesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/utility.css"> -->
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(24, 24, 24);
+      font-family: sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar {
+      padding: 12px;
+      width: 80vw;
+      display: flex;
+      margin: 10px;
+      justify-content: space-between;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    .button-1 {
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      /* border: 2px solid red; */
+    }
+
+    #sel-button {
+      border-radius: 5px;
+      font-family: sans-serif;
+      font-weight: 400;
+      background-color: black;
+      color: white;
+      padding: 5px;
+    }
+
+    .button-2 {
+      font-family: sans-serif;
+      font-weight: 400;
+      background-color: red;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    /* <!-- main section --> */
+    .container {
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .text-area {
+      display: flex;
+      width: 500px;
+      flex-wrap: wrap;
+    }
+
+    .text-box-heading h2 {
+      font-size: 56px;
+      line-height: 70px;
+      text-align: center;
+    }
+
+    .paragraph {
+      text-align: center;
+    }
+
+    .paragraph h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    #para {
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .startof {
+      display: flex;
+      padding: 10px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .startof input {
+      font-family: sans-serif;
+      width: 290px;
+      padding: 10px;
+      background-color: black;
+      color: white;
+      border: none;
+      box-shadow: 0px 0px 5px 0px rgb(96, 96, 96);
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .startof button {
+      background-color: red;
+      color: white;
+      font-family: sans-serif;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .trending-cards {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      align-items: center;
+      margin-top: 30px;
+      width: 80vw;
+    }
+
+    .trending{
+      display: flex;
+      justify-content: flex-start; 
+      width: 100%;  
+      margin: 10px;
+    }
+
+    .trending h1{
+      font-size: 24px;
+      font-weight: 500;
+      justify-items: flex-start;
+    }
+
+    .all-pages {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -ms-overflow-style: none;
+    }
+
+    .cards {
+      box-sizing: border-box;
+      display: flex;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .all-pages::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cards img {
+      border-radius: 10px;
+      height: auto;
+      width: 100%;
+    }
+
+
+
+    @media only screen and (max-width: 604px) {
+
+      .logo img {
+        width: 120px;
+      }
+
+      .button-1 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        /* border: 2px solid red; */
+      }
+
+      .buttons {
+        box-sizing: border-box;
+      }
+
+      #sel-button {
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: sans-serif;
+        font-weight: 400;
+        background-color: black;
+        color: white;
+        padding: 5px;
+      }
+
+      .button-2 {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        background-color: red;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .startof {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .text-box-heading h2 {
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      .paragraph h2 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      #para {
+        font-weight: 400;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+      .all-pages {
+        overflow: auto;
+        scroll-behavior: smooth;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo">
+      </div>
+      <div class="buttons">
+        <div class="button-1">
+          <select id="sel-button">
+            <option value="EN-IN">English</option>
+            <option value="HI-IN">हिन्दी</option>
+          </select>
+          <div class="button-2">
+            Sign-In
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="text-area">
+        <div class="text-box-heading">
+          <h2>Unlimited movies, TV shows and more</h2>
+        </div>
+        <div class="paragraph">
+          <h2>Starts at ₹149. Cancel at any time.</h2>
+          <p id="para"> Ready to watch? Enter your email to create or restart your membership. </p>
+        </div>
+        <div class="startof">
+          <input type="text" placeholder="Email address">
+          <button>Get Started ></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="trending-cards">
+      <div class="trending">
+        <h1>Trending Now</h1>
+      </div>
+      <div class="all-pages">
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQ2lygENQ58jdDOXRdp6rTzib_Z5wBhfVumcN0GiI0PSsb8A7v_bEqis_Rm1Y_b0OrWxc3Qjv9nOUCHAhzMXdtuKul3FzbWWLFsZc9O5Vx6PcHuXpJmM7VtVr2Enrtvw2XjR.jpg?r=63b&quot"
+            alt="Card 1"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABV5rwf2fuYX2i-sYcG48oLpkL_dI0wXwdPApVds-33GmNPAx5AY1hwmOBuEzvSw4lP2jJt4gai_uX7vG87sq-4P-7zmtxCMw290.jpg"
+            alt="Card 2"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABfnhM64pMiWbUrUoCE3sSrSN6eyc6x4Vd917XaYvxV7RGnku1O5nTV_6M8RrsfT0xxFfmwGmHGN6keFMyrXq3G3b-D8evaoUQcA.jpg"
+            alt="Card 3"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABZ_Z53fg0mDul7w0DZtChXYxl0nb4BNctABvh_p2ml_c0H3ghSLJGkNExHSKJ1-jkLZ1_yoxPFL89HnnWN42zsLcBAZNUkMzIIo.jpg"
+            alt="Card 4"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcRi-Vz9VpMGeZVjIKsyu5BHicUbS6upq4Lg9S2m_61phaK25Vw3QlPPhkVByhZRqMMFB8X1tIkwlxE1x2byy0L7F1LLLVZNEGU.jpg"
+            alt="Card 5"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABRM_9P_j8e2uQW9dFz7vCpauD0qN8a_2tMY_b6rrPEtyTXnR3GUeJu6PGkn89VDroMG-kuVz59HEGryZv-A1a6hoPklYRxpA__YwTWcUUawnZUubaveOdL91fY9zOP_xSsgv.jpg"
+            alt="Card 6"></div>
+        <div class="cards"><img
+            src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABTixI7Cz0HVkuB1KQvyT9xedX83h2ob_PwNRW74psOcCGFKugKnc9ErhsaNh6JyyjGFS7ZLrxafx7yAkgdqlsT2kP9b0oGHIRnY.jpg"
+            alt="Card 7"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
+
